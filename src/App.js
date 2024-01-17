@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/Homepage';
@@ -7,33 +7,22 @@ import StreamyardPage from './components/StreamyardPage'; // Update the import p
 import YoutubePage from './components/YoutubePage'; // Update the import path
 import DacastPage from './components/DacastPage'; // Update the import path
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Router>
-         <Routes>
-           <Route path="/" exact component={HomePage} />
-           <Route path="/twitch" component={TwitchPage} />
-           <Route path="/streamyard" component={StreamyardPage} />
-           <Route path="/youtube" component={YoutubePage} />
-           <Route path="/dacast" component={DacastPage} />
-         </Routes>
-       </Router>
-    </div>
+    <Navbar className="bg-body-tertiary justify-content-between navbar.header"></Navbar>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/twitch" element={<TwitchPage />} />
+        <Route path="/streamyard" element={<StreamyardPage />} />
+        <Route path="/youtube" element={<YoutubePage />} />
+        <Route path="/dacast" element={<DacastPage />} />
+      </Routes>
+    </Router>
+  </div>
   );
 }
 
