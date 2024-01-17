@@ -14,7 +14,7 @@ function JumbotronComponent({ title, onClick, description, imageCard }) {
                 <Card.Text>
                 {description}
                 </Card.Text>
-                <Button variant="primary">vai a vedere</Button>
+                <Button variant="primary"onClick={onClick}>vai a vedere</Button>
             </Card.Body>
         </Card>
     </CardGroup>
